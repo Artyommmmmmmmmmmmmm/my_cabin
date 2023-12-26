@@ -1,2 +1,1 @@
-django
-django-filter
+django | django-filter
