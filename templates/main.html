@@ -1,0 +1,32 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+The cabin
+{% endblock title %}
+
+{% block content %}
+
+    <from action="" method="get">
+    {{ filterset.form.as_p }}
+    <input type="submit" value="найти"/>
+    </from>
+
+    <hr>
+
+<table>
+    <tr>
+        <td><h2>title</h2></td>
+    </tr>
+
+    {% for i in main_page %}
+    <tr>
+        <td>{{ i.title }}</td>
+        <td>
+            <a href="{% url 'detailpage' pk=i.id %}" >detail</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock content %}
